@@ -15,8 +15,8 @@ export default function Home () {
   return (
   <div className='min-h-screen bg-black px-4 md:px-6 lg:px-8 '>
     <header className='flex items-center justify-between px-4 py-4 mx-auto'>
-      <div className='flex items-center'>
-        <Image src={WebIcon} />
+      <div className='flex items-center '>
+        <Image src={WebIcon} className='hidden md:block' />
       </div>
       <div className='flex gap-4'>
       <a href='https://www.instagram.com/phoenixpro5ect'>
@@ -30,7 +30,7 @@ export default function Home () {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white dark:bg-black p-6 rounded-lg shadow-lg relative w-[90%] max-w-md">
             <button
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+              className="absolute top-2 right-2 text-red-600 hover:text-black font-black"
               onClick={() => setShowContactForm(false)}
             >
               ✕ {/* Close button */}

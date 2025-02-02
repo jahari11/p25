@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import '@/src/globals.css'
 import {Gabarito}  from "next/font/google"
 import FuzzyOverlay from "@/components/FuzzyOverlay";
 import Footer from "@/components/Footer";
