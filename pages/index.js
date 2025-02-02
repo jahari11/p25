@@ -13,7 +13,7 @@ export default function Home () {
   const [showContactForm, setShowContactForm] = useState(false);
   
   return (
-  <div className='min-h-screen bg-black px-4 py-16 md:px-6 lg:px-8 '>
+  <div className='min-h-screen bg-black px-4 md:px-6 lg:px-8 '>
     <header className='flex items-center justify-between px-4 py-4 mx-auto'>
       <div className='flex items-center'>
         <Image src={WebIcon} />
