@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="bg-black px-4 py-16 flex flex-col items-center">
             <span className="text-white md:text-[30px] uppercase font-bold">Phoenix project 2025</span>
             <Image src={Logo} width={300} />
-            <span className="text-red-600 font-bold uppercase md:text-[30px]">phoenixproject4you@gmail.com</span>
+            <span className="text-red-600 font-bold text-center uppercase md:text-[30px]">Lets talk: <a href='mailto:phoenixproject4you@gmail.com'>phoenixproject4you@gmail.com</a></span>
             <div className='flex gap-2'>
         <a href='https://www.instagram.com/phoenixpro5ect'>
         <FaInstagram className='text-white text-2xl hover:text-red-600' />
