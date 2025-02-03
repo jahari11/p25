@@ -45,7 +45,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto rounded-lg p-6 sm:p-8 shadow-lg bg-white dark:bg-black">
+    <div className="w-full max-w-lg mx-auto rounded-lg p-1 sm:p-8 shadow-lg bg-white dark:bg-black">
       <h2 className="font-bold text-xl sm:text-2xl text-neutral-800 dark:text-neutral-200 text-center">
         Contact Us
       </h2>
