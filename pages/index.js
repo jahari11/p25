@@ -46,7 +46,7 @@ export default function Home () {
           <Image src={Logo} />
         </div>
       <h1 className=' text-6xl md:text-8xl font-bold mb-2 text-red-600 uppercase text-center'>Phoenix Project</h1>
-      <h2 className='text-4xl sm:text-5xl font-bold mb-6 tracking-tight text-white uppercase'>I think therefore, I choose Phoenix Project</h2>
+      <h2 className='text-4xl sm:text-5xl font-bold mb-6 tracking-tight text-white uppercase'>I think, therefore I choose Phoenix Project</h2>
       <p className='text-xl text-white uppercase font-thin'>We craft digital experiences that spark growth, automate success, and position your business for the future.</p>
       </div>
     </div>

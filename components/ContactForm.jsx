@@ -5,18 +5,18 @@ import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 
 export default function ContactForm() {
-  const [formData, setFormData]= useState({
+  const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
-    setFormData({...formData, [e.target.id]: e.target.value})
+    setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -40,50 +40,76 @@ export default function ContactForm() {
         message: "",
       });
     } else {
-      setStatus("error")
+      setStatus("error");
     }
-  }
-
-
+  };
 
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-      <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+    <div className="w-full max-w-lg mx-auto rounded-lg p-6 sm:p-8 shadow-lg bg-white dark:bg-black">
+      <h2 className="font-bold text-xl sm:text-2xl text-neutral-800 dark:text-neutral-200 text-center">
         Contact Us
       </h2>
-      <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
+      <p className="text-neutral-600 text-sm sm:text-base text-center mt-2 dark:text-neutral-300">
         We'd love to hear from you! Fill out the form below and we'll get back
         to you soon.
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
-        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+      <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First Name</Label>
-            <Input id="firstname" placeholder="John" type="text" value={formData.firstname} onChange={handleChange} required />
+            <Input
+              id="firstname"
+              placeholder="John"
+              type="text"
+              value={formData.firstname}
+              onChange={handleChange}
+              required
+            />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last Name</Label>
-            <Input id="lastname" placeholder="Doe" type="text" value={formData.lastname} onChange={handleChange} required />
+            <Input
+              id="lastname"
+              placeholder="Doe"
+              type="text"
+              value={formData.lastname}
+              onChange={handleChange}
+              required
+            />
           </LabelInputContainer>
         </div>
 
-        <LabelInputContainer className="mb-4">
+        <LabelInputContainer>
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="you@example.com" type="email" value={formData.email} onChange={handleChange} required />
+          <Input
+            id="email"
+            placeholder="you@example.com"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </LabelInputContainer>
 
-        <LabelInputContainer className="mb-4">
+        <LabelInputContainer>
           <Label htmlFor="subject">Subject</Label>
-          <Input id="subject" placeholder="Subject of your message" type="text" value={formData.subject} onChange={handleChange} required />
+          <Input
+            id="subject"
+            placeholder="Subject of your message"
+            type="text"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+          />
         </LabelInputContainer>
 
-        <LabelInputContainer className="mb-8">
+        <LabelInputContainer>
           <Label htmlFor="message">Message</Label>
           <textarea
             id="message"
             placeholder="Type your message here..."
-            className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 h-24"
+            className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 h-28 sm:h-32 resize-none"
             value={formData.message}
             onChange={handleChange}
             required
@@ -91,25 +117,27 @@ export default function ContactForm() {
         </LabelInputContainer>
 
         <button
-          className="bg-gradient-to-br relative group from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-red-600 font-bold rounded-md h-10 shadow-lg"
+          className="bg-gradient-to-br relative group from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 w-full text-red-600 font-bold rounded-md h-12 shadow-md hover:opacity-90 transition"
           type="submit"
         >
           Send Message &rarr;
           <BottomGradient />
         </button>
 
-        {status === "success" && <p className="text-black mt-4">Message was successfully sent!</p>}
-        {status === "error" && <p className="text-red-600 mt-4">Something went wrong. Please try again</p>}
-
-        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
-        
+        {status === "success" && (
+          <p className="text-green-600 text-center mt-4">
+            ✅ Message sent successfully!
+          </p>
+        )}
+        {status === "error" && (
+          <p className="text-red-600 text-center mt-4">
+            ❌ Something went wrong. Please try again.
+          </p>
+        )}
       </form>
     </div>
   );
 }
-
-
 
 const BottomGradient = () => (
   <>
